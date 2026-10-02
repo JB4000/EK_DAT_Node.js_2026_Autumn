@@ -1,7 +1,19 @@
 import express from 'express';
 const app = express();
 
+import path from 'path';
+
 app.use(express.static('public'));
+
+// task create "/" and "/about", their corresponding HTML pages served
+
+app.get('/', (req, res) => {
+    res.sendFile(path.resolve('public/frontpage/frontpage.html'));
+});
+
+app.get('/about', (req, res) => {
+    res.sendFile(path.resolve('public/about/about.html'));
+});
 
 // short-circuit operator
 // console.log(undefined || 0 || "" || 8080 || true);
