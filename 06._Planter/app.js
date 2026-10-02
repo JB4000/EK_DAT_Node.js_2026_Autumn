@@ -3,12 +3,12 @@ const app = express();
 
 
 
-const PORT = 8080;
+const PORT = process.env.PORT;
 
-app.listen(PORT, (error) => {
+const server = app.listen(undefined, (error) => {
     if (error) {
         console.log("Error starting the server", error);
         return;
     }
-    console.log('Server is running on port', PORT);
+    console.log('Server is running on port', server.address().port);
 });
