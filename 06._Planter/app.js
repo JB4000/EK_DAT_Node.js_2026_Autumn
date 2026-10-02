@@ -1,11 +1,18 @@
 import express from 'express';
 const app = express();
 
+app.use(express.static('public'));
 
+// short-circuit operator
+// console.log(undefined || 0 || "" || 8080 || true);
+// console.log(false && 8080 && null);
 
-const PORT = process.env.PORT;
+// nullish coalescence 
+// console.log("" ?? 8080);
 
-const server = app.listen(undefined, (error) => {
+const PORT = process.env.PORT ?? 8080;
+
+const server = app.listen(PORT, (error) => {
     if (error) {
         console.log("Error starting the server", error);
         return;
