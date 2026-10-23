@@ -160,5 +160,22 @@ a|
 * Can argue for better ways to structure the code and how to avoid files that are too long.
 a|
 
+| 08. Routers / Forms
+| Oct. 23rd
+a|
+* Routers (Express).
+* Forms
+* First Svelte Project
+a|
+* Can argue for better ways to structure the code and how to avoid files that are too long.
+* Can create an Express Router by heart.
+* Know why and will keep the endpoint intact within routes rather than prepend them when importing routers.
+* Can create a new Svelte project with `npm create vite@latest`.
+a|
+link:00._Course_Material/01._Assignments/08._Server-side_Rendering_Routers/Svelte_interactive_tutorials_introduction_props.md[Svelte interactive tutorials  (introduction / props)]
+
+link:00._Course_Material/01._Assignments/08._Server-side_Rendering_Routers/send_emails.md[Send Emails]
+
+link:00._Course_Material/01._Assignments/08._Server-side_Rendering_Routers/register_domain_emails/register_domain_emails.md[Optional: Register Domain + Emails]
 
 |===
