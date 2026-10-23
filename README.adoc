@@ -165,11 +165,13 @@ a|
 a|
 * Routers (Express).
 * Forms
+* Dotenv.
 * First Svelte Project
 a|
 * Can argue for better ways to structure the code and how to avoid files that are too long.
 * Can create an Express Router by heart.
 * Know why and will keep the endpoint intact within routes rather than prepend them when importing routers.
+* Understands the role of Dotenv and is able to differentiate it from environment variables in Node.js.
 * Can create a new Svelte project with `npm create vite@latest`.
 a|
 link:00._Course_Material/01._Assignments/08._Server-side_Rendering_Routers/Svelte_interactive_tutorials_introduction_props.md[Svelte interactive tutorials  (introduction / props)]
