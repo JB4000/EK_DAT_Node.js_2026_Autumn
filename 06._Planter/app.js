@@ -3,32 +3,11 @@ const app = express();
 
 app.use(express.static('public'));
 
-import { frontpagePage, aboutPage } from './templatingEngine/pages.js';
 
-// ===================================================================
-// Pages
-// ===================================================================
-app.get('/', (req, res) => {
-    res.send(frontpagePage);
-});
-
-app.get('/about', (req, res) => {
-    res.send(aboutPage);
-});
-
-
-// ===================================================================
-// API
-// ===================================================================
-import { fetchAllPlants, fetchPlant } from './util/fetchPlants.js';
-
-app.get('/api/plants', async (req, res) => {
-    res.send({ data: await fetchAllPlants() });
-});
-
-app.get('/api/plants/:plantSlug', async (req, res) => {
-    res.send({ data: await fetchPlant(req.params.plantSlug)});
-});
+import pagesRouter from './routers/pagesRouter.js';
+app.use(pagesRouter);
+import plantsRouter from './routers/plantsRouter.js';
+app.use(plantsRouter);
 
 
 // ===================================================================
