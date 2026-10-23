@@ -1,4 +1,4 @@
-import { frontpagePage, aboutPage } from '../templatingEngine/pages.js';
+import { frontpagePage, aboutPage, contactPage } from '../templatingEngine/pages.js';
 
 import { Router } from 'express';
 
@@ -11,6 +11,10 @@ router.get('/', (req, res) => {
 
 router.get('/about', (req, res) => {
     res.send(aboutPage);
+});
+
+router.get('/contact', (req, res) => {
+    res.send(contactPage);
 });
 
 export default router;
