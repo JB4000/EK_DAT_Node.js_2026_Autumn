@@ -1,4 +1,4 @@
-export function sanitizeXSS(string) {
+function sanitizeXSS(string = "") {
     return string
         .replaceAll('&', '&amp;')
         .replaceAll('<', '&lt;')
@@ -8,5 +8,3 @@ export function sanitizeXSS(string) {
         .replaceAll('`', '&#x60;')
         .replaceAll('/', '&#x2F;');
 }
-
-console.log("XSS")

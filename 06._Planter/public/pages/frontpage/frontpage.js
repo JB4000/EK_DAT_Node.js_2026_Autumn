@@ -16,13 +16,25 @@ async function addPlant() {
     const plantSlug = document.getElementById('plants-list-search-input').value;
     const plantsSection = document.getElementById('plants');
 
-
     const response = await fetch(`/api/plants/${plantSlug}`);
     const result = await response.json();
     const plant = result.data;
+
+    if (!plant) {
+        console.log("Did not find a plant, please select a plant");
+        return;
+    }
+
     
+    const imageURL = "https://www.plantsolve.com/"  + sanitizeXSS(plant.featuredImage);
+
     const plantsDiv = document.createElement('div');
     plantsDiv.innerHTML = `
-        <h3>New Plant</h3>
+        <h2>${sanitizeXSS(plantSlug)}</h2>
+        <h4>${sanitizeXSS(plant.care?.watering)}</h4>
+        <img class="plant-image" src="${imageURL}" alt="plant image ${plantSlug}">
+        <p>${sanitizeXSS(plant.quickAnswer)}</p>
     `;
+
+    plantsSection.appendChild(plantsDiv);
 }
